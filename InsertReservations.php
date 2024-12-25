@@ -89,7 +89,7 @@
 <body>
     <div class="container">
         <h1>เพิ่มการจอง</h1>
-        <form action="InsertReservation.php" method="POST">
+        <form action="InsertReservations.php" method="POST">
             <div class="form-group">
                 <label for="customer_id">รหัสลูกค้า:</label>
                 <input type="text" name="customer_id" id="customer_id" class="form-control" required>
@@ -123,7 +123,7 @@
             // Prepare the SQL statement
             $stmt = $conn->prepare(
                 'INSERT INTO reservations (customer_id, room_id, check_in_date, check_out_date, status) 
-                VALUES (:customer_id, :room_id, :check_in_date, :check_out_date, :status)'
+        VALUES (:customer_id, :room_id, :check_in_date, :check_out_date, :status)'
             );
 
             // Bind form values to the prepared statement
@@ -141,6 +141,7 @@
             }
         }
         ?>
+
     </div>
 </body>
 
